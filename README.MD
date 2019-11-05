@@ -2,7 +2,12 @@
 
 WalletView is a control built in completely in Xamarin Forms that enables building a UI similar to the Apple Wallet App.
 
-  ![Screenshot](images/wallet_ios.gif =300x) ![Screenshot](images/wallet_android.gif =300x)
+<table>
+  <tr>
+    <td><img src="https://github.com/raver99/WalletView/blob/master/images/wallet_ios.gif"></td>
+    <td><img src="https://github.com/raver99/WalletView/blob/master/images/wallet_android.gif" alt="ios.gif"></td>
+  </tr>
+</table>
 
 # Getting started
 
@@ -11,14 +16,7 @@ WalletView is a control built in completely in Xamarin Forms that enables buildi
 	- Nuget: <<LINK>>
     - Install into your PCL/.NET Standard project and Client projects.
 
-**Additional iOS Setup**
-
-- Add this line to your AppDelegate.cs after the Xamarin.Forms initialisation:
-```
-   Xamarin.Forms.iOS.WalletViewRenderer.Init() 
-```
-
-***Platform Support***
+**Platform Support**
 
 | Plugin | README |
 | ------ | ------ |
@@ -45,11 +43,53 @@ The WalletView was created to help build a simmilar view. It supports the follow
 
 **Use it like this in your XAML:**
 
-**Declaring an item template:**
+```xml
+<local:WalletView x:Name="walletControl"
+		  ItemsSource="{Binding CardsGroups}"
+		  ItemHeight="200"
+		  IsGroupingEnabled="true"
+		  ContentMargin="30"
+		  ItemSpacing="-170">
+```
+
+**Declaring an card item template:**
+
+```xml
+<local:WalletView.CardTemplate>
+	<DataTemplate>
+	    <BoxView CornerRadius="15"
+		 Color="{Binding CardColor}"
+		 HeightRequest="200"/>
+	</DataTemplate>
+</local:WalletView.CardTemplate>
+```
 
 **Declaring a header template:**
 
+```xml
+<local:WalletView.HeaderTemplate>
+	<DataTemplate>
+	    <Label Text="{Binding Key}" FontSize="24" FontAttributes="Bold" Margin="5,20,0,0"/>
+	</DataTemplate>
+</local:WalletView.HeaderTemplate>
+```
+
 **Declaring a details template:**
+
+```xml
+    <local:WalletView.DetailViewTemplate>
+	<DataTemplate>
+	    <StackLayout>
+		<StackLayout Orientation="Horizontal">
+		<Button Text="Edit" HorizontalOptions="EndAndExpand"
+			Command="{Binding EditTappedCommand}"/>
+		<Button Text="Delete" HorizontalOptions="StartAndExpand"
+			Command="{Binding BindingContext.DeleteTappedCommand, Source={x:Reference page}}" CommandParameter="{Binding .}"/>
+		</StackLayout>
+	    </StackLayout>
+	</DataTemplate>
+    </local:WalletView.DetailViewTemplate>
+```
 
 # Limitations
 
