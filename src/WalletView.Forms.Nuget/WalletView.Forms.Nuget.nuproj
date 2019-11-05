@@ -5,17 +5,23 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1ECCFBCF-3F2D-4492-9FEE-9F0C108A3F04}</ProjectGuid>
-    <Description>WalletView.Forms.Nuget</Description>
-    <PackageId>WalletView.Forms.Nuget</PackageId>
+    <PackageId>Xamarin.Forms.Controls.WalletView</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
     <Authors>Roland Huhn</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
     <RootNamespace>WalletView.Forms.Nuget</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>WalletView.Forms.Nuget</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Owners>Roland Huhn</Owners>
+    <Copyright>2019 Roland Huhn</Copyright>
+    <Title>Xamarin.Forms.Controls.WalletView</Title>
+    <Summary>WalletView is a control built in completely in Xamarin Forms that enables building a UI similar to the Apple Wallet App.</Summary>
+    <PackageProjectUrl>https://github.com/raver99/WalletView</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/raver99/WalletView/blob/master/LICENSE</PackageLicenseUrl>
+    <Description>WalletView is a control built in completely in Xamarin Forms that enables building a UI similar to the Apple Wallet App.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
