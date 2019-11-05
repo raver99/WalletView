@@ -2,7 +2,8 @@
 
 WalletView is a control built in completely in Xamarin Forms that enables building a UI similar to the Apple Wallet App.
 
-  <<GIFS>>
+  ![Screenshot](images/wallet_ios.gif)
+  ![Screenshot](images/wallet_droid.gif)
 
 # Getting started
 
@@ -58,4 +59,4 @@ The WalletView was created to help build a simmilar view. It supports the follow
 
 # License
 
-The MIT License (MIT), see <<LICENSE>>file.
+The MIT License (MIT), see [LICENSE](LICENSE) file.
