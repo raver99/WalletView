@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:WalletView.Forms.Controls"
+             x:Class="WalletView.Forms.Controls.WalletView">
+    <ContentView.Content>
+        <controls:AlwaysScrollView x:Name="ScrollView" VerticalScrollBarVisibility="Never">
+           <Grid RowSpacing="0"
+                 x:Name="ContentGrid">
+               <Button x:Name="DoneButton"
+                       Text="Done"
+                       Margin="10,0,0,0"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start"
+                       Opacity="0"
+                       IsEnabled="false"
+                       BackgroundColor="Transparent"
+                       Clicked="DoneButton_Clicked">
+                   <Button.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS" Value="16" />
+                            <On Platform="Android" Value="14" />
+                        </OnPlatform>
+                    </Button.FontSize>
+                </Button>
+                <StackLayout x:Name="ItemsContainerStack"
+                             Margin="0,40,0,20">
+                </StackLayout>
+                <ContentView x:Name="DetailsView"
+                             Opacity="0"
+                             IsEnabled="False"
+                             Margin="0,-100,0,0"
+                             VerticalOptions="Start"
+                             HeightRequest="100"/>
+           </Grid>
+        </controls:AlwaysScrollView>
+    </ContentView.Content>
+</ContentView>
