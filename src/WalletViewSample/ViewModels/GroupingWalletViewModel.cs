@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace WalletViewSample.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public class GroupingWalletViewModel : ViewModelBase
     {
         private ObservableCollection<Grouping<string, CardModel>> cardsGroups;
         public ObservableCollection<Grouping<string, CardModel>> CardsGroups
@@ -104,7 +104,7 @@ namespace WalletViewSample.ViewModels
             }
         }
 
-        public MainViewModel()
+        public GroupingWalletViewModel()
         {
             var theCards = new ObservableCollection<CardModel>()
             {

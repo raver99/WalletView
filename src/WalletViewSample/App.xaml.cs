@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,21 @@ namespace WalletViewSample
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
+
+            TaskScheduler.UnobservedTaskException += (object sender, UnobservedTaskExceptionEventArgs eventArgs) =>
+            {
+                eventArgs.SetObserved();
+                eventArgs.Exception.Handle(ex =>
+                {
+                    Debug.WriteLine(ex);
+                    if (Debugger.IsAttached)
+                    {
+                        Debugger.Break();
+                    }
+                    return true;
+                });
+            };
         }
 
         protected override void OnStart()

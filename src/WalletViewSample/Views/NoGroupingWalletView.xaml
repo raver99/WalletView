@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:WalletView.Forms.Controls;assembly=WalletView.Forms"
+    x:Name="page"
+    x:Class="WalletViewSample.Views.NoGroupingWalletView">
+    <ContentPage.Content>
+         <local:WalletView x:Name="walletControl"
+                             ItemsSource="{Binding Cards}"
+                             Margin="0,0,0,0"
+                             ItemHeight="200"
+                             IsGroupingEnabled="false"
+                             ContentMargin="30"
+                             ItemSpacing="-170">
+            <local:WalletView.CardTemplate>
+                <DataTemplate>
+                    <BoxView CornerRadius="15"
+                         Color="{Binding CardColor}"
+                         HeightRequest="200"/>
+                </DataTemplate>
+            </local:WalletView.CardTemplate>
+            <local:WalletView.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Key}" FontSize="24" FontAttributes="Bold" Margin="5,20,0,0"/>
+                </DataTemplate>
+            </local:WalletView.HeaderTemplate>
+            <local:WalletView.DetailViewTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                        <Button Text="Edit" HorizontalOptions="EndAndExpand"
+                                Command="{Binding EditTappedCommand}"/>
+                        <Button Text="Delete" HorizontalOptions="StartAndExpand"
+                                Command="{Binding BindingContext.DeleteTappedCommand, Source={x:Reference page}}" CommandParameter="{Binding .}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </local:WalletView.DetailViewTemplate>
+        </local:WalletView>
+    </ContentPage.Content>
+</ContentPage>

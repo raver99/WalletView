@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WalletViewSample.ViewModels;
+using WalletViewSample.Views;
 using Xamarin.Forms;
 
 namespace WalletViewSample
@@ -17,8 +18,16 @@ namespace WalletViewSample
         public MainPage()
         {
             InitializeComponent();
+        }
 
-            BindingContext = new MainViewModel();
+        public void WalletViewGrouping_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new GroupingWalletView());
+        }
+
+        public void WalletViewNoGrouping_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NoGroupingWalletView());
         }
     }
 }

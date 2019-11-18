@@ -5,37 +5,13 @@
              x:Name="page"
              x:Class="WalletViewSample.MainPage">
     <ContentPage.Content>
-        <local:WalletView x:Name="walletControl"
-                             ItemsSource="{Binding CardsGroups}"
-                             Margin="0,0,0,0"
-                             ItemHeight="200"
-                             IsGroupingEnabled="true"
-                             ContentMargin="30"
-                             ItemSpacing="-170">
-            <local:WalletView.CardTemplate>
-                <DataTemplate>
-                    <BoxView CornerRadius="15"
-                         Color="{Binding CardColor}"
-                         HeightRequest="200"/>
-                </DataTemplate>
-            </local:WalletView.CardTemplate>
-            <local:WalletView.HeaderTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Key}" FontSize="24" FontAttributes="Bold" Margin="5,20,0,0"/>
-                </DataTemplate>
-            </local:WalletView.HeaderTemplate>
-            <local:WalletView.DetailViewTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <StackLayout Orientation="Horizontal">
-                        <Button Text="Edit" HorizontalOptions="EndAndExpand"
-                                Command="{Binding EditTappedCommand}"/>
-                        <Button Text="Delete" HorizontalOptions="StartAndExpand"
-                                Command="{Binding BindingContext.DeleteTappedCommand, Source={x:Reference page}}" CommandParameter="{Binding .}"/>
-                        </StackLayout>
-                    </StackLayout>
-                </DataTemplate>
-            </local:WalletView.DetailViewTemplate>
-        </local:WalletView>
+       <StackLayout VerticalOptions="CenterAndExpand">
+           <StackLayout>
+               <Button Text="Wallet View - with grouping"
+                   Clicked="WalletViewGrouping_Clicked"/>
+           <Button Text="Wallet View - no grouping"
+                   Clicked="WalletViewNoGrouping_Clicked"/>
+           </StackLayout>
+       </StackLayout>
     </ContentPage.Content>
 </ContentPage>
