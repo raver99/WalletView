@@ -13,7 +13,7 @@ WalletView is a control built in completely in Xamarin Forms that enables buildi
 
 - Clone the project and checkout the sample app
 - Use the nuget package to install into an existing project on every platform
-	- Nuget: <<LINK>>
+	- [Nuget package](https://www.nuget.org/packages/Xamarin.Forms.Controls.WalletView/1.0.0)
     - Install into your PCL/.NET Standard project and Client projects.
 
 **Platform Support**
