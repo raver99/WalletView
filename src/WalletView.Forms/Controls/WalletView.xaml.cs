@@ -403,13 +403,20 @@ namespace WalletView.Forms.Controls
                 {
                     var group = grouping as IList;
 
-                    var headerView = GetHeaderView(group);
-
-                    ItemsContainerStack.Children.Add(headerView);
-
-                    foreach (object item in group)
+                    if(group != null)
                     {
-                        ItemsContainerStack.Children.Add(GetItemView(item));
+                        var headerView = GetHeaderView(group);
+
+                        ItemsContainerStack.Children.Add(headerView);
+
+                        foreach (object item in group)
+                        {
+                            ItemsContainerStack.Children.Add(GetItemView(item));
+                        }
+                    }
+                    else
+                    {
+                        Debug.WriteLine("No group found in bound collection, when group expected");
                     }
                 }
             }
