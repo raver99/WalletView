@@ -282,7 +282,15 @@ namespace WalletView.Forms.Controls
                         await BackToUnselectedState();
                     }
 
-                    ItemsContainerStack.Children.RemoveAt(e.OldStartingIndex + 1);
+                    if(ItemsContainerStack.Children.Count > 1)
+                    {
+                        ItemsContainerStack.Children.RemoveAt(e.OldStartingIndex + 1);
+                    }
+                    else
+                    {
+                        ItemsContainerStack.Children.Clear();
+                    }
+                    
                     break;
 
                 case NotifyCollectionChangedAction.Replace:
@@ -422,7 +430,10 @@ namespace WalletView.Forms.Controls
             }
             else
             {
-                ItemsContainerStack.Children.Add(GetHeaderView());
+                if(ItemsSource.Count > 0)
+                {
+                    ItemsContainerStack.Children.Add(GetHeaderView());
+                }
 
                 foreach (object item in ItemsSource)
                 {
