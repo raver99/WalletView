@@ -60,7 +60,6 @@ namespace WalletViewSample.ViewModels
             }
         }
 
-
         public Command ShowCouponsCommand
         {
             get
@@ -122,11 +121,11 @@ namespace WalletViewSample.ViewModels
                 },
             };
 
-            IsGroupingEnabled = true;
+            IsGroupingEnabled = false;
 
-            Cards = new ObservableCollection<CardModel>();
+            //Cards = new ObservableCollection<CardModel>();
 
-            //Cards = discounts;
+            Cards = discounts;
         }
     }
 }

@@ -21,7 +21,20 @@
             </local:WalletView.CardTemplate>
             <local:WalletView.HeaderTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding Key}" FontSize="24" FontAttributes="Bold" Margin="5,20,0,0"/>
+                     <StackLayout Margin="25,0,25,0"
+                                     Orientation="Horizontal"
+                                     HeightRequest="65">
+                            <Label Text="Kundenkarten" FontSize="32"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   Margin="0,10,0,10"/>
+                            <Button Text="Add" HeightRequest="30"
+                                         VerticalOptions="Center"
+                                         BackgroundColor="Transparent" Margin="0,0,10,0"
+                                         Command="{Binding BindingContext.AddCommand, Source={x:Reference page}}" CommandParameter="{Binding .}"/>
+                        </StackLayout>
                 </DataTemplate>
             </local:WalletView.HeaderTemplate>
             <local:WalletView.DetailViewTemplate>
