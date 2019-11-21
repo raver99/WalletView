@@ -483,7 +483,14 @@ namespace WalletView.Forms.Controls
 
         private View GetItemView(object item)
         {
-            var contentView = CardTemplate.CreateContent();
+            DataTemplate template = CardTemplate;
+
+            if(CardTemplate != null && CardTemplate is DataTemplateSelector dataTemplateSelector)
+            {
+                template = dataTemplateSelector.SelectTemplate(item, null);
+            }
+
+            var contentView = template.CreateContent();
             if (!(contentView is View view))
             {
                 throw new Exception($"Templated control must be a View or a ViewCell ({nameof(CardTemplate)})");
