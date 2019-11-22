@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1ECCFBCF-3F2D-4492-9FEE-9F0C108A3F04}</ProjectGuid>
     <PackageId>Xamarin.Forms.Controls.WalletView</PackageId>
-    <PackageVersion>1.0.4</PackageVersion>
+    <PackageVersion>1.0.5</PackageVersion>
     <Authors>Roland Huhn</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

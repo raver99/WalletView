@@ -68,6 +68,12 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WalletView.Forms\WalletView.Forms.csproj">
+      <Project>{9014FF66-E33F-42FB-8E94-9D3BBF6EEB07}</Project>
+      <Name>WalletView.Forms</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
